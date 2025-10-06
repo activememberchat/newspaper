@@ -8,6 +8,8 @@ import IconSunHigh from "@/assets/icons/IconSunHigh.svg";
 import IconMenuDeep from "@/assets/icons/IconMenuDeep.svg";
 import LinkButton from "./LinkButton.astro";
 import { SITE } from "@/config";
+import { Image } from "astro:assets";
+import logo from "@/assets/logo.png";
 
 const { pathname } = Astro.url;
 
@@ -43,7 +45,8 @@ const isActive = (path: string) => {
         href="/"
         class="absolute py-1 text-xl leading-8 font-semibold whitespace-nowrap sm:static sm:my-auto sm:text-2xl sm:leading-none"
       >
-        {SITE.title}
+        <!--{SITE.title}-->
+          <Image src={logo} alt="AMC's logo" class="h-50 w-50 dark:invert" />
       </a>
       <nav
         id="nav-menu"
@@ -79,7 +82,7 @@ const isActive = (path: string) => {
             </a>
           </li>
           <li class="col-span-2">
-            <a href="/about" class:list={{ "active-nav": isActive("/about") }}>
+            <a href="https://amcforum.wiki/g/newspaper" class:list={{ "active-nav": isActive("/about") }}>
               About
             </a>
           </li>
