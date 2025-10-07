@@ -41,6 +41,11 @@ fs.readdirSync(postsDir).forEach((file) => {
   fs.unlinkSync(path.join(postsDir, file));
 });
 turndownService.keep(["figcaption", "span"]);
+try {
+  fs.mkdirSync("./src/data/blog", { recursive: true })
+} catch {
+
+}
 sorted.map((post) => {
   fs.writeFileSync(
     path.resolve(__dirname, `./src/data/blog/${post.slug}.md`),
